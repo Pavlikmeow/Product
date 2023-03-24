@@ -8,3 +8,5 @@ spring:
     driver-class-name: org.postgresql.Driver
   liquibase:
     default-schema: product
+server:
+  port: 8083
