@@ -31,11 +31,5 @@ public class ProductService {
     public Product getProductById(UUID id) {
         return productRepository.findProductById(id);
     }
-    @Transactional
-    public void purchase(List<PurchaseCart> purchaseCartList) {
-        for (PurchaseCart purchaseCart : purchaseCartList) {
-            Product product = productRepository.findProductById(purchaseCart.getProductId());
-            product.setInStock(product.getInStock() - purchaseCart.getQuantity());
-        }
-    }
+
 }
