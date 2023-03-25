@@ -1,7 +1,7 @@
 package com.shop.product.controller;
 
 import com.shop.product.data.dto.PurchaseCart;
-import com.shop.product.service.ProductService;
+import com.shop.product.service.OperationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,10 +15,10 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PurchaseController {
 
-    private final ProductService productService;
+    private final OperationService operationService;
 
     @PostMapping
     void purchase(@RequestBody List<PurchaseCart> purchaseCartList) {
-        productService.purchase(purchaseCartList);
+        operationService.purchase(purchaseCartList);
     }
 }
