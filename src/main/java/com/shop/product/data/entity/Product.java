@@ -45,6 +45,9 @@ public class Product {
     @Column(name = "in_stock")
     private int inStock;
 
+    @Column(name = "organization_id", insertable = false, updatable = false, nullable = false)
+    private UUID organizationId;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "organization_id", nullable = false)
     @JsonBackReference
