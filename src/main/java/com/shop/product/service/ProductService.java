@@ -31,5 +31,10 @@ public class ProductService {
     public Product getProductById(UUID id) {
         return productRepository.findProductById(id);
     }
+    @Transactional
+    public void refund(UUID id, int quantity) {
+        Product product = productRepository.findProductById(id);
+        product.setInStock(product.getInStock() + quantity);
+    }
 
 }
